@@ -8,7 +8,7 @@ capabilities: {
 
 
 
-//framework: 'jasmine',
+framework: 'jasmine',
 
 
   //seleniumAddress: 'http://localhost:4444/wd/hub',
