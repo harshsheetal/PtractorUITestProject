@@ -21,6 +21,10 @@ onPrepare: function(){
       }));
 },
 
+jasmineNodeOpts: {
+ defaultTimeoutInterval: 2500000
+},
+
 
   //seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: ['PricelineTestCase.js']
