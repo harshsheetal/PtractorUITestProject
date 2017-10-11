@@ -13,7 +13,7 @@ console.log('inside timeout');
 done();
 }, 5000);
 })*/
-element(by.xpath("//input[@placeholder='Destination']")).sendKeys("New York");
+element(by.xpath("//input[@placeholder='Where are you going?']")).sendKeys("New York");
 browser.sleep(2000);
 element(by.xpath("//input[@placeholder='Check-in']")).sendKeys("02/17/2018");
 browser.sleep(2000);
@@ -28,8 +28,8 @@ browser.actions().mouseMove(elem).click().perform();*/
 browser.wait(EC.visibilityOf(search_btn), 5000);
 search_btn.click();*/
 
-element(by.css('.hotel-retail-search-form .primary.green')).sendKeys(protractor.Key.TAB);
-element(by.css('.hotel-retail-search-form .primary.green')).click();
+element(by.xpath("//button[@data-reactid='100']")).sendKeys(protractor.Key.TAB);
+element(by.xpath("//button[@data-reactid='100']")).click();
 //browser.wait(EC.urlContains('stay/search'), 20000);
 browser.sleep(15000);
 //element(by.xpath(".//*[@id='search-retail-listings']/div/div/div[1]/div[1]/div/div/div/div[1]/div[3]/div[2]/div[3]/div/a/div/p")).sendKeys(protractor.Key.TAB);

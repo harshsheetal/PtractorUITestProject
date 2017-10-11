@@ -6,9 +6,9 @@ capabilities: {
   'browserName' : 'chrome'
 },
 
-
-
 framework: 'jasmine',
+
+
 
 onPrepare: function(){
   browser.ignoreSynchronization=true;
@@ -20,12 +20,20 @@ onPrepare: function(){
         takeScreenshots: true,
       }));
 },
-
 jasmineNodeOpts: {
- defaultTimeoutInterval: 2500000
+  isVerbose: true,
+  showColors: true,
+  showTiming: true,
+  realtimeFailure: true,
+  stackTrace: false,
+ defaultTimeoutInterval: 250000
 },
 
 
-  //seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['PricelineTestCase.js']
+suites : {
+  functionalTest:[
+    'Specs/User able to Naviagte To Listings Page.spec.js'
+  ],
+}
+  //specs: ['PricelineTestCase.js']
 };
