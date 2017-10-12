@@ -2,6 +2,7 @@ exports.config = {
  directConnection: true,
 
 
+
 capabilities: {
   'browserName' : 'chrome'
 },
@@ -30,9 +31,13 @@ jasmineNodeOpts: {
 },
 
 
+
 suites : {
   functionalTest:[
-    'Specs/User able to Naviagte To Listings Page.spec.js'
+    'Specs/User able to Naviagte To Listings Page.spec.js',
+    'Specs/User Able to Navigate to Details Page From Listings Page.spec.js',
+    'Specs/User Able to Navigate To Checkout Page.spec.js',
+    'Specs/End To End Test.spec.js'
   ],
 }
   //specs: ['PricelineTestCase.js']

@@ -1,9 +1,11 @@
 var EC = protractor.ExpectedConditions;
 var homePage = require ('../Pages/homePage.js');
+var listingsPage = require('../Pages/listingsPage.js');
+var detailsPage= require('../Pages/detailsPage.js');
 describe('Hotels Priceline', function(){
 
 "use strict"
-it('userAbleToNavigateToListingsPage', function(done){
+it('userAbleToNavigateToCheckoutPageFromDetailsPage', function(done){
 
   browser.get('https://www.priceline.com/');
 
@@ -19,7 +21,20 @@ it('userAbleToNavigateToListingsPage', function(done){
   homePage.clickOnFindDealBtn();
   browser.sleep(10000);
   browser.wait(EC.urlContains('stay/search'), 10000);
-  browser.sleep(5000);
+  //browser.pause();
+  browser.sleep(15000);
+  //listingsPage.listingsBookHotelBtn.sendKeys(protractor.Key.TAB);
+  listingsPage.clickOnListingsBookHotelBtn();
+  browser.sleep(10000);
+
+  browser.getAllWindowHandles().then(function(handles) {
+        browser.switchTo().window(handles[2]);
+        browser.sleep(10000);
+  })
+
+  detailsPage.detailsBookHotelBtn.sendKeys(protractor.Key.TAB);
+  detailsPage.clickOnDetailsBookHotelBtn();
+  browser.sleep(10000);
 
 done();
 })
